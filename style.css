@@ -1,10 +1,15 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background: #fdf6fa;
   font-family: "Trebuchet MS", sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* portrait */
   min-height: 100vh;
+  padding: 14px;
 }
 
 /* hover lucu */
@@ -13,13 +18,14 @@ body {
   transition: 0.3s;
 }
 
-/* CONTAINER */
+/* CONTAINER – portrait panjang */
 .container {
-  width: 850px;
-  margin: 30px auto;
+  width: 100%;
+  max-width: 390px;          /* ukuran HP portrait */
+  min-height: 100vh;         /* bikin panjang */
   background: #fff;
   border: 2px solid #f1d6e8;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 16px;
 }
 
@@ -29,27 +35,33 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  border-radius: 8px;
-  font-size: 14px;
+  border-radius: 10px;
+  font-size: 13px;
 }
 
-/* PROFILE SECTION */
+/* PROFILE */
 .profile {
   display: flex;
-  gap: 10px; /* dirapatkan */
-  margin-top: 15px;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 2px dashed #f0b7d5;
 }
 
 .profile-info h2 {
   margin: 0;
+  font-size: 18px;
+}
+
+.profile-info p {
+  font-size: 13.5px;
+  line-height: 1.5;
 }
 
 .profile-info button {
@@ -57,137 +69,72 @@ body {
   padding: 6px 12px;
   background: #fdeaf4;
   border: 1px solid #f0b7d5;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
-/* HELLO BOX */
+/* HELLO BOX – nempel & seimbang */
 .likes {
   align-self: center;
-  transform: translateY(-6px); /* auto mendekat */
+  transform: translateY(-4px);
 }
 
 .likes .mini-box {
   background: #fff;
   border: 2px dashed #f3b6c8;
-  padding: 16px;
-  border-radius: 14px;
-  line-height: 1.6;
-  margin-top: 0; /* dirapatkan */
-  font-size: 13px;
+  padding: 14px;
+  border-radius: 16px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  margin-top: 0;
 }
 
 /* RULES */
 .rules {
   display: flex;
-  gap: 10px;
-  margin-top: 12px;
+  flex-direction: column; /* portrait */
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .rule-box {
-  width: 50%;
+  width: 100%;
   border: 1px dashed #f0b7d5;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 13px;
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 13.5px;
+  line-height: 1.6;
 }
 
 /* LISTS */
 .lists {
   display: flex;
-  gap: 8px;
-  margin-top: 10px;
+  flex-direction: column; /* portrait */
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .list-box {
-  flex: 1;
   border: 1px dashed #f0b7d5;
-  border-radius: 10px;
-  padding: 8px;
-  font-size: 13px;
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 13.5px;
   text-align: center;
 }
 
 /* FOOTER */
 .footer {
-  margin-top: 12px;
+  margin-top: 18px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .footer button {
   background: #fdeaf4;
   border: 1px solid #f0b7d5;
-  border-radius: 12px;
-  padding: 6px 18px;
+  border-radius: 14px;
+  padding: 8px 20px;
   cursor: pointer;
-}
-
-/* ========================= */
-/* RESPONSIVE HP */
-/* ========================= */
-
-@media (max-width: 768px) {
-
-  body {
-    align-items: flex-start;
-    padding: 12px;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 420px;
-    margin: 20px auto;
-    padding: 14px;
-  }
-
-  .topbar {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .profile-img {
-    width: 140px;
-    height: 140px;
-  }
-
-  .profile-info {
-    margin-top: 6px;
-  }
-
-  .likes {
-    transform: translateY(0);
-    width: 100%;
-  }
-
-  .likes .mini-box {
-    margin-top: 6px;
-  }
-
-  .rules {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .rule-box {
-    width: 100%;
-  }
-
-  .lists {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
 }
